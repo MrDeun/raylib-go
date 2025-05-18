@@ -4,14 +4,11 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-z_buffer := []float32{}
-
 func PlayCube3D() {
 	cube := Cube3D(512)
 	step := 0.01
 	for !rl.WindowShouldClose() {
 		rl.BeginDrawing()
-		z_buffer = {}
 		rl.ClearBackground(rl.Black)
 		for _, t := range cube.triangles {
 			temp1 := rl.Vector2{float32(t[0].x + centerX), float32(t[0].y + centerY)}
