@@ -39,8 +39,8 @@ func Cube3D(size float64) Geometry {
 	}
 
 	geo := Geometry{
-		position:  vector3zero(),
-		rotation:  vector3zero(),
+		position:  Vector3Zero(),
+		rotation:  Vector3Zero(),
 		lines:     lines_arr,
 		verticies: vertices_arr,
 		triangles: triangles_arr,

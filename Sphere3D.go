@@ -15,5 +15,5 @@ func Cylinder3D(size float64, vert_points, horz_points int32) Geometry {
 			verticies = append(verticies, v3)
 		}
 	}
-	return Geometry{position: vector3zero(), rotation: vector3zero(), verticies: verticies, lines: nil}
+	return Geometry{position: Vector3Zero(), rotation: Vector3Zero(), verticies: verticies, lines: nil}
 }
