@@ -22,8 +22,19 @@ func decodeVertex(chunks []string) Vector3 {
 	return vector3(x, y, z)
 }
 
-func decodeFace(chunks []string) [3][3]int {
-	coords := [3][3]int{}
+func decodeFaceQuad(chunks []string) [][3]int {
+	return [][3]int{}
+}
+
+func decodeFaceTriangle(chunks []string) [][3]int {
+	return [][3]int{}
+}
+
+func decodeFace(chunks []string) [][3]int {
+	coords := [][3]int{}
+	if len(chunks) != 4 {
+		panic((fmt.Sprintf("Incorrect lenght of line for face decoding: %d", len(chunks))))
+	}
 	for i := 1; i < len(chunks); i++ {
 		vector_chunks := strings.Split(chunks[i], "/")
 
@@ -67,7 +78,7 @@ func parseOBJFileToGeometry(path string, scale float64) Geometry {
 			vert := decodeVertex(chunks)
 			verts = append(verts, vert.MultiplyScalar(scale))
 		} else if chunks[0] == "f" {
-			_ = decodeFace(chunks)
+			// _ = decodeFace(chunks)
 		}
 
 	}
